@@ -1,6 +1,7 @@
 import React from 'react';
 import '../stylesheets/App.css';
 import { fetchCharacter } from '../services/CharacterService';
+import CharacterList from './CharacterList';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,9 +22,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        Componente App
-      </div>
+      <React.Fragment>
+        <header>
+          RICK Y MORTY
+        </header>
+        <main>
+          <CharacterList />
+
+        </main>
+
+      </React.Fragment>
     );
   }
 }
