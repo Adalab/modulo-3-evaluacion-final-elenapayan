@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-function CharacterCard() {
+function CharacterCard(props) {
   return (
     <li>
-      <img src="" alt="" />
-      <h3>Nombre: Rick</h3>
-      <p>Especie: human</p>
+      <img src={props.img} alt={props.name} />
+      <h3>{props.name}</h3>
+      <p>{props.specie}</p>
     </li>
   )
 }

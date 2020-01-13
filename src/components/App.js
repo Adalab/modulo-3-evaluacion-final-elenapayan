@@ -1,6 +1,7 @@
 import React from 'react';
 import '../stylesheets/App.css';
 import { fetchCharacter } from '../services/CharacterService';
+import logo from '../Rick_and_Morty_-_logo.png'
 import CharacterList from './CharacterList';
 
 class App extends React.Component {
@@ -24,10 +25,10 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <header>
-          RICK Y MORTY
+          <img src={logo} alt="logo" />
         </header>
         <main>
-          <CharacterList />
+          <CharacterList characters={this.state.characterStore} />
 
         </main>
 

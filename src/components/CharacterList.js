@@ -2,10 +2,19 @@ import React from 'react';
 import CharacterCard from './CharacterCard';
 
 
-function CharacterList() {
+function CharacterList(props) {
   return (
     < ul >
-      <CharacterCard />
+      {props.characters.map((character, key) => {
+        return (
+          <CharacterCard
+            key={key}
+            img={character.image}
+            name={character.name}
+            specie={character.species}
+          />
+        )
+      })}
     </ul >
   )
 }
