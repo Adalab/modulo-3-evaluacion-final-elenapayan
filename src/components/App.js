@@ -5,6 +5,11 @@ import logo from '../Rick_and_Morty_-_logo.png'
 import CharacterList from './CharacterList';
 import CharacterFilter from './CharacterFilter';
 
+
+const includes = (haystack, needle) => {
+  return haystack.toLowerCase().includes(needle.toLowerCase());
+}
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -30,6 +35,12 @@ class App extends React.Component {
     })
   }
 
+  filterCharacters() {
+    return this.state.characterStore
+      .filter(character => {
+        return includes(character.name, this.state.search)
+      })
+  }
 
   render() {
     return (
@@ -39,8 +50,7 @@ class App extends React.Component {
         </header>
         <main>
           <CharacterFilter handleInput={this.handleInput} />
-          <CharacterList characters={this.state.characterStore} />
-
+          <CharacterList characters={this.filterCharacters()} />
         </main>
 
       </React.Fragment>
