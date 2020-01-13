@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function CharacterDetail(props) {
-  console.log(props.character, "detail");
   return (
     <React.Fragment>
       <Link to="/">Volver</Link>
@@ -17,5 +17,9 @@ function CharacterDetail(props) {
     </React.Fragment>
   )
 }
+
+CharacterDetail.propTypes = {
+  character: PropTypes.object
+};
 
 export default CharacterDetail;

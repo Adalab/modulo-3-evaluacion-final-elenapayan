@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 
 function CharacterFilter(props) {
@@ -18,6 +18,9 @@ function CharacterFilter(props) {
   )
 }
 
-
+CharacterFilter.propTypes = {
+  handleInput: PropTypes.func,
+  value: PropTypes.string
+};
 
 export default CharacterFilter;

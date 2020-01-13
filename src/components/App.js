@@ -50,7 +50,7 @@ class App extends React.Component {
     const routeId = parseInt(props.match.params.id);
     const character = this.state.characterStore.find(character => character.id === routeId);
 
-    console.log(props, "props match");
+    // console.log(props, "props match");
     return (<CharacterDetail
       character={character}
     />)

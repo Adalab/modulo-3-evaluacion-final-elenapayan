@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CharacterCard from './CharacterCard';
 
 
@@ -20,6 +21,9 @@ function CharacterList(props) {
   )
 }
 
+CharacterList.propTypes = {
+  characters: PropTypes.array,
+};
 
 
 export default CharacterList;
