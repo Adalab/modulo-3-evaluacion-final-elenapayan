@@ -2,20 +2,41 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function CharacterDetail(props) {
-  return (
-    <React.Fragment>
-      <Link to="/">Volver</Link>
-      {!!props.character === false ? <h1>Cargando</h1> : <div>
-        <img src={props.character.image} alt={props.character.name} />
-        <h3>{props.character.name}</h3>
-        <p>{props.character.species}</p>
-        <p>{props.character.status}</p>
-        <p>{props.character.origin.name}</p>
-        <p>{props.character.episode.length}</p>
-      </div>}
-    </React.Fragment>
-  )
+
+const CharacterDetail = (props) => {
+  let icon;
+  console.log(props.character);
+  // const { image, name, species, status, origin, episode } = {};
+  const skull = "fas fa-skull";
+  const heart = "fas fa-heartbeat";
+  const unknown = "fas fa-question";
+  if (props.character) {
+    const { image, name, species, status, origin, episode } = props.character;
+    if (status === 'Alive') {
+      icon = heart
+    } else if (status === 'Dead') {
+      icon = skull
+    } else {
+      icon = unknown
+    }
+
+    return (
+      <React.Fragment>
+        <Link to="/"><button>Volver</button></Link>
+        <div>
+          <img src={image} alt={name} />
+          <h3>{name}</h3>
+          <p>Specie: {species}</p>
+          <div><p>Status: {status}</p>
+            <i className={icon}></i></div>
+          <p>Planet: {origin.name}</p>
+          <p>Episodes: {episode.length}</p>
+        </div>
+      </React.Fragment>
+    )
+  } else {
+    return <p>Cargando...</p>
+  }
 }
 
 CharacterDetail.propTypes = {

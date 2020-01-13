@@ -8,10 +8,6 @@ import CharacterFilter from './CharacterFilter';
 import CharacterDetail from './CharacterDetail';
 
 
-const includes = (haystack, needle) => {
-  return haystack.toLowerCase().includes(needle.toLowerCase());
-}
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -23,6 +19,8 @@ class App extends React.Component {
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
   }
 
+
+
   componentDidMount() {
     fetchCharacter()
       .then(data => {
@@ -30,6 +28,7 @@ class App extends React.Component {
           characterStore: data.results
         });
       });
+
   }
 
   handleInput(data) {
@@ -41,10 +40,9 @@ class App extends React.Component {
   filterCharacters() {
     return this.state.characterStore
       .filter(character => {
-        return includes(character.name, this.state.search)
+        return character.name.toLowerCase().includes(this.state.search.toLowerCase());
       })
   }
-
 
   renderCharacterDetail(props) {
     const routeId = parseInt(props.match.params.id);

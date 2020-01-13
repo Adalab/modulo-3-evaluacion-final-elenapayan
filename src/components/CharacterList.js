@@ -4,6 +4,7 @@ import CharacterCard from './CharacterCard';
 
 
 function CharacterList(props) {
+  console.log(props.characters)
   return (
     < ul >
       {props.characters.map((character, key) => {
