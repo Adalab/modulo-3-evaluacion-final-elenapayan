@@ -9,6 +9,7 @@ function CharacterList(props) {
         return (
           <CharacterCard
             key={key}
+            id={character.id}
             img={character.image}
             name={character.name}
             specie={character.species}

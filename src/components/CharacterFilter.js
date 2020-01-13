@@ -13,7 +13,7 @@ function CharacterFilter(props) {
   return (
     <form action="" method="get">
       <label htmlFor="inputSearch"></label>
-      <input type="text" id="inputSearch" name="inputSearch" placeholder="Busca tu personaje favorito" onChange={handleInput} />
+      <input type="text" id="inputSearch" name="inputSearch" placeholder="Busca tu personaje favorito" onChange={handleInput} value={props.value} />
     </form>
   )
 }
