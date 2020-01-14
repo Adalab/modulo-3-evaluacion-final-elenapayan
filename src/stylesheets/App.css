@@ -5,7 +5,7 @@
   text-align: center;
 }
 .header-image {
-  width: 100%;
+  width: 50vw;
 }
 
 /*CHARACTER FILTER*/
@@ -31,6 +31,9 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: space-between;
+}
+.list-paragraph {
+  margin-left: 15px;
 }
 
 /*CHARACTER CARD*/
@@ -96,6 +99,9 @@
 }
 
 @media all and (max-width: 320px) {
+  .header-image {
+    width: 90%;
+  }
   .form-input {
     width: 300px;
     height: 30px;

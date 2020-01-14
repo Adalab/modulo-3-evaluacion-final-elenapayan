@@ -23,7 +23,7 @@ function CharacterList(props) {
     )
   }
   else {
-    return (<p>Personaje no encontrado, prueba con otro nombre</p>)
+    return (<p className="list-paragraph">Personaje no encontrado, prueba con otro nombre!</p>)
   }
 }
 CharacterList.propTypes = {
