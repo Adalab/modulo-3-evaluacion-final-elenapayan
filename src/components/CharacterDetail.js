@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 
 const CharacterDetail = (props) => {
   let icon;
-  console.log(props.character);
-  // const { image, name, species, status, origin, episode } = {};
+  // console.log(props.character);
   const skull = "fas fa-skull";
   const heart = "fas fa-heartbeat";
   const unknown = "fas fa-question";
@@ -22,15 +21,19 @@ const CharacterDetail = (props) => {
 
     return (
       <React.Fragment>
-        <Link to="/"><button>Volver</button></Link>
-        <div>
-          <img src={image} alt={name} />
-          <h3>{name}</h3>
-          <p>Specie: {species}</p>
-          <div><p>Status: {status}</p>
-            <i className={icon}></i></div>
-          <p>Planet: {origin.name}</p>
-          <p>Episodes: {episode.length}</p>
+        <div className="details-container">
+          <Link to="/" className="details-link"><span>&lt;</span> Volver</Link>
+          <div className="card-details-container">
+            <img src={image} alt={name} />
+            <div className="card-text">
+              <h3>{name}</h3>
+              <p>Specie: {species}</p>
+              <div className="status-container"><p className="status-paragraph">Status: {status}</p>
+                <i className={icon}></i></div>
+              <p>Planet: {origin.name}</p>
+              <p>Episodes: {episode.length}</p>
+            </div>
+          </div>
         </div>
       </React.Fragment>
     )

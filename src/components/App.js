@@ -57,7 +57,7 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <header>
+        <header className="header-container">
           <img src={logo} alt="logo" />
         </header>
         <Switch>
