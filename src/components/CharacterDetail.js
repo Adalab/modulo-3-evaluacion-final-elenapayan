@@ -24,7 +24,7 @@ const CharacterDetail = (props) => {
         <div className="details-container">
           <Link to="/" className="details-link"><span>&lt;</span> Volver</Link>
           <div className="card-details-container">
-            <img src={image} alt={name} />
+            <img className="card-image" src={image} alt={name} />
             <div className="card-text">
               <h3>{name}</h3>
               <p>Specie: {species}</p>

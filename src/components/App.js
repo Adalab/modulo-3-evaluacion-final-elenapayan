@@ -58,7 +58,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <header className="header-container">
-          <img src={logo} alt="logo" />
+          <img className="header-image" src={logo} alt="logo" />
         </header>
         <Switch>
           <Route exact path="/">
